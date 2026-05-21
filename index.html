@@ -7,7 +7,6 @@
 <title>Pennant Mockup Video</title>
 
 <style>
-
 body{
   margin:0;
   overflow:hidden;
@@ -19,94 +18,90 @@ body{
   width:100vw;
   height:100vh;
   overflow:hidden;
+  background:#f3efe8;
 }
-
-/* BACKGROUND */
 
 .background{
   position:absolute;
   width:100%;
   height:100%;
   object-fit:cover;
-
-  animation:
-  slowZoom 8s ease-in-out forwards;
+  animation: slowZoom 8s ease-in-out forwards;
 }
-
-/* MOVING PENNANT */
 
 .pennant{
   position:absolute;
-
-  top:17%;
-  left:36%;
-
-  width:33%;
-
-  animation:
-  placePennant 8s ease-in-out forwards;
+  top:18.5%;
+  left:36.8%;
+  width:34%;
+  transform-origin:left center;
+  animation: placePennant 8s ease-in-out forwards;
+  filter: drop-shadow(0px 8px 10px rgba(0,0,0,0.18));
 }
 
-/* CAMERA ZOOM */
-
 @keyframes slowZoom{
-
   0%{
     transform:scale(1);
   }
-
   100%{
-    transform:scale(1.04);
+    transform:scale(1.035);
   }
 }
 
-/* PENNANT MOTION */
-
 @keyframes placePennant{
+  0%{
+    transform:
+      translateX(-210px)
+      translateY(70px)
+      rotate(-10deg)
+      scale(0.98);
+    opacity:0;
+  }
 
- 0%{
-  transform:
-  translateX(-260px)
-  translateY(90px)
-  rotate(-14deg);
-
-  opacity:0;
-}
-
-  35%{
+  20%{
     opacity:1;
   }
 
-  70%{
+  55%{
     transform:
-    translateX(0px)
-    translateY(0px)
-    rotate(1deg);
+      translateX(-18px)
+      translateY(8px)
+      rotate(-2deg)
+      scale(1);
+  }
+
+  72%{
+    transform:
+      translateX(2px)
+      translateY(-2px)
+      rotate(0.8deg)
+      scale(1);
+  }
+
+  86%{
+    transform:
+      translateX(0px)
+      translateY(0px)
+      rotate(-0.3deg)
+      scale(1);
   }
 
   100%{
     transform:
-    translateX(0px)
-    translateY(0px)
-    rotate(0deg);
+      translateX(0px)
+      translateY(0px)
+      rotate(0deg)
+      scale(1);
   }
 }
-
 </style>
 </head>
 
 <body>
 
 <div class="scene">
-
-<img
-class="background"
-src="background.PNG">
-
-<img
-class="pennant"
-src="Pennant.PNG">
-
+  <img class="background" src="background.PNG" alt="background">
+  <img class="pennant" src="Pennant.PNG" alt="pennant">
 </div>
 
 </body>
