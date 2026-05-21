@@ -20,21 +20,40 @@ body{
   background:#f3efe8;
 }
 
-.background{
+.background,
+.hands{
   position:absolute;
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+.background{
   animation: slowZoom 8s ease-in-out forwards;
 }
+
 .pennant{
   position:absolute;
-  top:8%;
-  left:11%;
-  width:108%;
+  top:10%;
+  left:14%;
+  width:88%;
   transform-origin:left center;
   animation: placePennant 8s ease-in-out forwards;
   filter: drop-shadow(0px 8px 10px rgba(0,0,0,0.18));
+}
+
+.hands{
+  z-index:3;
+  pointer-events:none;
+  animation: slowZoom 8s ease-in-out forwards;
+}
+
+.pennant{
+  z-index:2;
+}
+
+.background{
+  z-index:1;
 }
 
 @keyframes slowZoom{
@@ -44,14 +63,14 @@ body{
 
 @keyframes placePennant{
   0%{
-    transform:translateX(-210px) translateY(70px) rotate(-10deg) scale(0.98);
+    transform:translateX(-170px) translateY(45px) rotate(-8deg) scale(0.98);
     opacity:0;
   }
 
   20%{ opacity:1; }
 
   55%{
-    transform:translateX(-18px) translateY(8px) rotate(-2deg) scale(1);
+    transform:translateX(-15px) translateY(6px) rotate(-2deg) scale(1);
   }
 
   72%{
@@ -74,6 +93,7 @@ body{
 <div class="scene">
   <img class="background" src="./background-pennant.png" alt="background">
   <img class="pennant" src="./pennant-only.png" alt="pennant">
+  <img class="hands" src="./hands-only.png" alt="hands">
 </div>
 
 </body>
